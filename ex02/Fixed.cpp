@@ -3,36 +3,36 @@
 //Constructor/Destructor
 Fixed::Fixed(): fp_value(0)
 {
-	// std::cout << "Default Constructor called" << std::endl;
+	// std::cout << "Default constructor called" << std::endl;
 }
 
 Fixed::Fixed(const int input)
 {
-	// std::cout << "Int Constructor called" << std::endl;
+	// std::cout << "Int constructor called" << std::endl;
 	this->fp_value = input << this->fract_bits;
 }
 
 Fixed::Fixed(const float input)
 {
-	// std::cout << "Float Constructor called" << std::endl;
+	// std::cout << "Float constructor called" << std::endl;
 	this->fp_value = roundf(input * (1 << this->fract_bits));
 }
 
 Fixed::Fixed(const Fixed &copy)
 {
-	// std::cout << "Fixed Copy Constructor called" << std::endl;
+	// std::cout << "Fixed Copy constructor called" << std::endl;
 	*this = copy;
 }
 
 Fixed::~Fixed()
 {
-	// std::cout << "Fixed Deconstructor called" << std::endl;
+	// std::cout << "Fixed deconstructor called" << std::endl;
 }
 
 //Equal Operator
 Fixed	&Fixed::operator=(const Fixed &src)
 {
-	// std::cout << "Fixed Assignation operator called" << std::endl;
+	// std::cout << "Fixed assignation operator called" << std::endl;
 	if (this != &src)
 		this->fp_value = src.getRawBits();
 
